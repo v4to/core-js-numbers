@@ -305,8 +305,18 @@ function getSumToN(n) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  let sum = 0;
+  let numCopy = num;
+
+  while (numCopy !== 0) {
+    const digit = numCopy % 10;
+
+    numCopy = Math.floor(numCopy / 10);
+    sum += digit;
+  }
+
+  return sum;
 }
 
 /**
